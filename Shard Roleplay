@@ -1,0 +1,12 @@
+# Szilánkok Szerepjáték - Roll20 Character Sheet
+
+Official character sheet for **Szilánkok Szerepjáték**, set in the dark fantasy world of **Ayterah**[cite: 5].
+
+## Features
+- **Core Attributes**: Track Physicality, Agility, Mind, Soul, and Charisma[cite: 5].
+- **Combat & Defense**: Manage Hit Points, Armor, Helmet, Shield, and Disharmony tracking[cite: 5].
+- **Skills & Dice Rolls**: Built-in macro buttons for quick rolling of skills (Athletics, Melee, Magic, etc.) factoring in character attributes and penalties[cite: 5].
+- **Notes & Inventory**: Dedicated text area for background, equipment, and notes[cite: 5].
+
+## Usage
+This sheet is designed to be used within the Roll20 Virtual Tabletop.
