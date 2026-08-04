@@ -1,0 +1,125 @@
+.charsheet {
+  background: #F7EFDC;
+  font-family: Cambria, Georgia, serif;
+  color: #2b2620;
+  padding: 10px;
+}
+
+.charsheet .sheet-header {
+  background: #123030;
+  border: 1px solid #B08D2E;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: #D4B05A;
+  margin-bottom: 10px;
+}
+
+.charsheet .sheet-header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.charsheet .sheet-header .subtitle {
+  font-size: 11px;
+  color: #cfe0df;
+}
+
+.charsheet .sheet-section {
+  background: #EDE0C0;
+  border: 1px solid #c9b98c;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.charsheet h2 {
+  color: #123030;
+  border-bottom: 2px solid #B08D2E;
+  font-size: 15px;
+  padding-bottom: 4px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.charsheet h4 {
+  margin: 0 0 5px 0;
+  color: #1E4B4B;
+  font-size: 13px;
+}
+
+.charsheet label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #5a5040;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 5px;
+}
+
+.charsheet input[type="text"],
+.charsheet input[type="number"],
+.charsheet select,
+.charsheet textarea {
+  width: 100%;
+  background: #fffdf6;
+  border: 1px solid #c9b98c;
+  border-radius: 4px;
+  padding: 5px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.charsheet textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.charsheet .sheet-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.charsheet .sheet-grid-2 { grid-template-columns: 1fr 1fr; }
+.charsheet .sheet-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.charsheet .sheet-grid-5 { grid-template-columns: repeat(5, 1fr); }
+
+.charsheet .sheet-card {
+  background: #F7EFDC;
+  border: 1px solid #c9b98c;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.charsheet .sheet-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.charsheet button[type="roll"] {
+  background: #B08D2E;
+  color: #123030;
+  border: 1px solid #D4B05A;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: inherit;
+}
+
+.charsheet button[type="roll"]:hover {
+  background: #D4B05A;
+}
+
+.charsheet .sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.charsheet .sheet-table th,
+.charsheet .sheet-table td {
+  padding: 6px;
+  border-bottom: 1px solid #c9b98c;
+  text-align: left;
+  font-size: 13px;
+}

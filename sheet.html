@@ -1,0 +1,176 @@
+<div class="szilankok-sheet">
+
+  <!-- FEJLÉC -->
+  <div class="sheet-header">
+    <h1>Szilánkok Szerepjáték — Karakterlap</h1>
+    <div class="subtitle">Ayterah világa</div>
+  </div>
+
+  <!-- ALAPADATOK -->
+  <div class="sheet-section">
+    <h2>Alapadatok</h2>
+    <div class="sheet-grid sheet-grid-2">
+      <div>
+        <label>Karakter neve</label>
+        <input type="text" name="attr_character_name" />
+      </div>
+      <div>
+        <label>Faj / nép</label>
+        <input type="text" name="attr_race" />
+      </div>
+      <div>
+        <label>Archetípus</label>
+        <input type="text" name="attr_archetype" />
+      </div>
+      <div>
+        <label>Szint</label>
+        <input type="number" name="attr_level" value="1" min="1" />
+      </div>
+    </div>
+  </div>
+
+  <!-- FŐJELLEMZŐK -->
+  <div class="sheet-section">
+    <h2>Főjellemzők</h2>
+    <div class="sheet-grid sheet-grid-5">
+      <div class="sheet-card">
+        <h4>Fizikum</h4>
+        <select name="attr_fizikum">
+          <option value="1">Szint 1 (+1)</option>
+          <option value="2">Szint 2 (+2)</option>
+          <option value="3">Szint 3 (+3)</option>
+          <option value="4">Szint 4 (+4)</option>
+        </select>
+      </div>
+      <div class="sheet-card">
+        <h4>Rátermettség</h4>
+        <select name="attr_ratermettseg">
+          <option value="1">Szint 1 (+1)</option>
+          <option value="2">Szint 2 (+2)</option>
+          <option value="3">Szint 3 (+3)</option>
+          <option value="4">Szint 4 (+4)</option>
+        </select>
+      </div>
+      <div class="sheet-card">
+        <h4>Tudat</h4>
+        <select name="attr_tudat">
+          <option value="1">Szint 1 (+1)</option>
+          <option value="2">Szint 2 (+2)</option>
+          <option value="3">Szint 3 (+3)</option>
+          <option value="4">Szint 4 (+4)</option>
+        </select>
+      </div>
+      <div class="sheet-card">
+        <h4>Lélek</h4>
+        <select name="attr_lelek">
+          <option value="1">Szint 1 (+1)</option>
+          <option value="2">Szint 2 (+2)</option>
+          <option value="3">Szint 3 (+3)</option>
+          <option value="4">Szint 4 (+4)</option>
+        </select>
+      </div>
+      <div class="sheet-card">
+        <h4>Karizma</h4>
+        <select name="attr_karizma">
+          <option value="1">Szint 1 (+1)</option>
+          <option value="2">Szint 2 (+2)</option>
+          <option value="3">Szint 3 (+3)</option>
+          <option value="4">Szint 4 (+4)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- HARC & ÁLLAPOTOK -->
+  <div class="sheet-section">
+    <h2>Harc & Védekezés</h2>
+    <div class="sheet-grid sheet-grid-3">
+      <div class="sheet-card">
+        <h4>Életpont</h4>
+        <div class="sheet-flex">
+          <input type="number" name="attr_hp_current" value="12" />
+          <span>/</span>
+          <input type="number" name="attr_hp_max" value="12" />
+        </div>
+      </div>
+      <div class="sheet-card">
+        <h4>Páncél / Felszerelés</h4>
+        <label>Páncél</label>
+        <input type="number" name="attr_armor" value="0" min="0" />
+        <label>Sisak</label>
+        <input type="number" name="attr_helmet" value="0" min="0" />
+        <label>Pajzs</label>
+        <input type="number" name="attr_shield" value="0" min="0" />
+      </div>
+      <div class="sheet-card">
+        <h4>Diszharmónia</h4>
+        <input type="number" name="attr_disharmony" value="0" min="0" />
+        <button type="roll" name="roll_disharmony_check" value="&{template:default} {{name=Diszharmónia próba}} {{szint=@{disharmony}}}">🎲 Helyzet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- KÉPZETTSÉGEK -->
+  <div class="sheet-section">
+    <h2>Képzettségek & Dobások</h2>
+    <table class="sheet-table">
+      <tr>
+        <th>Képzettség</th>
+        <th>Szint (0-4)</th>
+        <th>Dobás</th>
+      </tr>
+      <tr>
+        <td>Atlétika</td>
+        <td>
+          <select name="attr_atletika_level">
+            <option value="0">0 (D4 - gyakorlatlan)</option>
+            <option value="1" selected>1 (D6)</option>
+            <option value="2">2 (D8)</option>
+            <option value="3">3 (D10)</option>
+            <option value="4">4 (D12)</option>
+          </select>
+        </td>
+        <td>
+          <button type="roll" name="roll_atletika" value="&{template:default} {{name=Atlétika próba}} {{dobás=[[1d6 + @{ratermettseg} - @{disharmony}]]}}">Dobás (D6)</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Közelharc</td>
+        <td>
+          <select name="attr_kozelharc_level">
+            <option value="0">0 (D4 - gyakorlatlan)</option>
+            <option value="1" selected>1 (D6)</option>
+            <option value="2">2 (D8)</option>
+            <option value="3">3 (D10)</option>
+            <option value="4">4 (D12)</option>
+          </select>
+        </td>
+        <td>
+          <button type="roll" name="roll_kozelharc" value="&{template:default} {{name=Közelharc}} {{dobás=[[1d6 + @{fizikum} - @{disharmony}]]}}">Dobás (D6)</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Mágia</td>
+        <td>
+          <select name="attr_magia_level">
+            <option value="0">0 (D4 - gyakorlatlan)</option>
+            <option value="1" selected>1 (D6)</option>
+            <option value="2">2 (D8)</option>
+            <option value="3">3 (D10)</option>
+            <option value="4">4 (D12)</option>
+          </select>
+        </td>
+        <td>
+          <button type="roll" name="roll_magia" value="&{template:default} {{name=Mágia}} {{dobás=[[1d6 + @{lelek} - @{disharmony}]]}}">Dobás (D6)</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- FELSZERELÉS ÉS NAPLÓ -->
+  <div class="sheet-section">
+    <h2>Felszerelés & Megjegyzések</h2>
+    <textarea name="attr_notes" placeholder="Felszerelés, hátterek, jegyzetek..."></textarea>
+  </div>
+
+</div>
